@@ -2061,7 +2061,7 @@ p=t
 try{return e.apply(this,arguments)}finally{p=n}}}},529:(e,t,n)=>{Object.defineProperty(t,"__esModule",{value:!0}),t.tableActions=t.tableSlice=void 0
 var r=n(879)
 t.tableSlice=(0,r.createSlice)({name:"table",initialState:{dataTable:[],dataSlice:[],page:0,totalPages:0,limit:10,loaded:!1,username:null},reducers:{setDataTable:function(e,t){var n=0===e.dataTable.length
-e.loaded||(e.dataTable=e.dataTable.concat(t.payload.results)),n&&(e.dataSlice=e.dataTable.slice(0,e.limit),e.totalPages=Math.round(t.payload.count/e.limit))},setLogin:function(e,t){e.username=t.payload.username},nextPage:function(e,t){e.page<e.totalPages&&e.page++
+e.loaded||(e.dataTable=e.dataTable.concat(t.payload.results)),n&&(e.dataSlice=e.dataTable.slice(0,e.limit),e.totalPages=Math.ceil(t.payload.count/e.limit))},setLogin:function(e,t){e.username=t.payload.username},nextPage:function(e,t){e.page<e.totalPages&&e.page++
 var n=e.page*e.limit
 e.dataSlice=e.dataTable.slice(n,n+e.limit)},previousPage:function(e,t){e.page>0&&e.page--
 var n=e.page*e.limit

@@ -12,7 +12,7 @@ exports.tableSlice = (0, toolkit_1.createSlice)({
                 state.dataTable = state.dataTable.concat(action.payload.results);
             if (first) {
                 state.dataSlice = state.dataTable.slice(0, state.limit);
-                state.totalPages = Math.round(action.payload.count / state.limit);
+                state.totalPages = Math.ceil(action.payload.count / state.limit);
             }
         },
         setLogin: (state, action) => {
